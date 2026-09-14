@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ramon Villamediana</title>
+  <meta name="description" content="A little more about Ramon Villamediana, a visual designer and design engineer working across brand, UI, and frontend development.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+  <div class="layout">
+    <main class="main">
+      <section class="project-header">
+        <a href="../index.html" class="back-link">← Back home</a>
+        <h1 class="project-title">A little more about me</h1>
+        <div class="project-meta">
+          <span class="project-client">Ramon Villamediana</span>
+          <div class="project-divider"></div>
+          <span class="project-client">Visual Designer · Design Engineer</span>
+        </div>
+      </section>
+
+      <section class="project-body">
+        <div>
+          <p class="project-text">I'm Ramon, a visual designer who likes working in the space between a sharp idea and the thing that actually ships. My work moves across brand systems, digital products, websites, campaigns, and the frontend code that brings them to life.</p>
+        </div>
+
+        <div>
+          <div class="project-section-label">How I work</div>
+          <p class="project-text">I care about the details that make something feel considered: the rhythm of a layout, the clarity of a sentence, the behavior of a component, and the last ten percent of polish. I like getting close to the problem, asking direct questions, and making work that is both expressive and useful.</p>
+        </div>
+
+        <div>
+          <div class="project-section-label">Outside the brief</div>
+          <p class="project-text">I'm naturally curious and a little hands-on. I learn by making, whether that's exploring a new tool, building a small interface, or finding a better way to explain a complicated idea. Good work, to me, should leave people with a clearer path forward.</p>
+        </div>
+
+        <div>
+          <button class="hero-email">
+    <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
+        <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path> <!-- Closed this path tag! -->
+    </svg>
+    <span class="email-text">ramidevelops@gmail.com</span>
+</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.hero-email');
+    const txt = btn?.querySelector('.email-text');
+    
+    if (btn && txt) {
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText('ramidevelops@gmail.com').then(() => {
+                txt.textContent = 'copied to clipboard';
+                
+                setTimeout(() => {
+                    txt.textContent = 'ramidevelops@gmail.com';
+                    btn.style.removeAttribute('style'); // Keeps CSS file in full control
+                }, 1000);
+            });
+        });
+    }
+});
+  </script>
+</body>
+</html>
