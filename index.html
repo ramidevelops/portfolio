@@ -47,7 +47,7 @@
         <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
         <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path> <!-- Closed this path tag! -->
     </svg>
-    <span class="email-text">ramidevelops@gmail.com</span>
+    <span class="email-text">work@helloramon.com</span>
 </button>
 
 
@@ -211,11 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (btn && txt) {
         btn.addEventListener('click', () => {
-            navigator.clipboard.writeText('ramidevelops@gmail.com').then(() => {
+            navigator.clipboard.writeText('work@helloramon.com').then(() => {
                 txt.textContent = 'copied to clipboard';
                 
                 setTimeout(() => {
-                    txt.textContent = 'ramidevelops@gmail.com';
+                    txt.textContent = 'work@helloramon.com';
                     btn.style.removeAttribute('style'); // Keeps CSS file in full control
                 }, 1000);
             });
