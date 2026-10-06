@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="./">
   <title>Figma Weave AI Workflow — Ramon Villamediana</title>
-  <meta name="description" content="Built a Figma Weave AI workflow to automate social asset production for Mosaic — cutting turnaround from 2 days to 4 hours.">
+  <meta name="description" content="Built a Figma Weave AI workflow to automate social asset production for Mosaic — cutting a full social calendar from 2 days to 4 hours.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <style>
@@ -59,7 +59,7 @@
         <div class="project-meta">
           <span class="project-client">Mosaic</span>
           <div class="project-divider"></div>
-          <span class="project-client">solo build AI workflow</span>
+          <span class="project-client">Solo build · AI workflow</span>
           <div class="project-divider"></div>
           <div class="tag-row">
             <span class="tag tag-frontend">AI</span>
@@ -71,14 +71,23 @@
 
       <section class="project-body">
 
+        <video class="project-video" autoplay loop muted playsinline>
+          <source src="assets/weave-workflow/weave-intro.webm" type="video/webm">
+        </video>
+
+        <div>
+          <div class="project-section-label">My Role</div>
+          <p class="project-text">Solo build. I designed and built the pipeline on my own, and I maintain it.</p>
+        </div>
+
         <!-- Problem -->
         <div>
           <div class="project-section-label">The Problem</div>
-          <p class="project-text">Producing a single social asset at Mosaic meant sourcing imagery, drafting copy, looping in collaborators, and manually applying brand rules — a process that averaged <strong>2 days per post</strong> for what should be routine output. With a recurring social calendar and a lean team, that bottleneck wasn't sustainable.</p>
+          <p class="project-text">Turning the Mosaic social calendar into finished posts meant working through every entry by hand: sourcing imagery, drafting copy, looping in collaborators and applying brand rules. A full calendar took <strong>2 days</strong>, on a recurring cycle with a lean team.</p>
           <div class="stat-row">
             <div class="stat">
               <span class="stat-number">2d</span>
-              <span class="stat-label">Previous turnaround per asset</span>
+              <span class="stat-label">Previous turnaround per calendar</span>
             </div>
             <div class="stat">
               <span class="stat-number">4h</span>
@@ -94,7 +103,7 @@
         <!-- Solution -->
         <div>
           <div class="project-section-label">The Solution</div>
-          <p class="project-text">Built a <strong>Figma Weave</strong> AI pipeline that takes a social calendar brief as input and outputs production-ready, on-brand assets — no manual image sourcing, no copy pass, no back-and-forth. The system handles categorization, brand application, and layout generation end-to-end.</p>
+          <p class="project-text">Mosaic's business partners aren't designers, so a template wasn't an option. They write the content in a Word document and I handle the design. A <strong>Figma Weave</strong> AI pipeline digests the social calendar and creates an on-brand asset for each entry, so I can iterate fast and send assets for approval.</p>
         </div>
 
         <!-- Workflow video -->
@@ -106,7 +115,8 @@
         <!-- How it works -->
         <div>
           <div class="project-section-label">How It Works</div>
-          <p class="project-text">The brief gets ingested and converted into structured JSON — headline, body copy, and CTA — then automatically categorized by post type: community investment, operations, recruiting, sustainability, and more. Each category maps to a pre-defined background treatment so the system knows which visual direction to apply without any manual input.</p>
+         
+          <p class="project-text">I turn the Word document into structured JSON (headline, body copy, CTA per entry) and feed it to Weave, which sorts each entry by post type: community investment, operations, recruiting, sustainability and more. Each type maps to a set background treatment.</p>
         </div>
 
         <img src="assets/weave-workflow/JSON Data.png" alt="JSON structure fed into the Figma Weave workflow" class="project-img">
@@ -114,7 +124,7 @@
         <!-- Brand guardrails -->
         <div>
           <div class="project-section-label">Brand Guardrails</div>
-          <p class="project-text">The pipeline was trained on Mosaic's brand guidelines, approved typography, color system, and a curated library of reference assets. Every output stays on-brand without a manual review pass — the system enforces the rules so I don't have to.</p>
+          <p class="project-text">The pipeline is trained on Mosaic's brand guidelines, approved typography, color system and a curated reference library. I'm in charge of catching off-brand output. The success rate sits at about 90%: out of 100 assets, roughly 10 come out off brand.</p>
         </div>
 
         <img src="assets/weave-workflow/reference-library.png" alt="Reference library of approved brand assets fed into the workflow" class="project-img">
@@ -122,7 +132,7 @@
         <!-- Output examples -->
         <div>
           <div class="project-section-label">Output Examples</div>
-          <p class="project-text">Generated assets across post categories — each one brand-compliant and production-ready, no manual intervention.</p>
+          <p class="project-text">Generated assets across post categories.</p>
         </div>
 
         <div class="img-grid-2">
@@ -133,7 +143,7 @@
         <!-- Result -->
         <div>
           <div class="project-section-label">Result</div>
-          <p class="project-text">Asset turnaround dropped from <strong>2 days to 4 hours</strong> — built and maintained solo. Time recovered went back into higher-priority design work instead of repetitive production cycles.</p>
+          <p class="project-text">Processing the calendar and designing every post dropped from <strong>2 days to 4 hours</strong>. The time saved went back into higher-priority design work.</p>
         </div>
 
       </section>
