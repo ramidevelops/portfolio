@@ -3,12 +3,28 @@
 html { scroll-behavior: smooth; }
 
 /* ─── Fonts ──────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap');
+@font-face {
+  font-family: 'ABC Areal';
+  src: url('assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-variation-settings: 'MONO' 0;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Areal Mono';
+  src: url('assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-variation-settings: 'MONO' 100;
+  font-display: swap;
+}
 
 /* ─── Base ───────────────────────────────────────────────── */
 body {
 
-  font-family: 'Inter', sans-serif;
+  font-family: 'ABC Areal', sans-serif;
   letter-spacing: -0.25px;
  /* background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 40%, #f0f9ff 70%, #e0f2fe 100%);*/
  background-color: #fafafa;
@@ -44,50 +60,76 @@ body {
   display: none;
 }
 
-@keyframes pageContentReveal {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes innerPageReveal {
+  from { opacity: 0; filter: blur(4px); transform: translateY(8px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
 
-@keyframes contentItemReveal {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes homeContentReveal {
+  from { opacity: 0; filter: blur(2px); transform: translateY(5px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
 
-.initial-site-visit .home-page .main {
-  animation: pageContentReveal 0.7s 1.9s ease-out both;
+.home-page { --home-reveal-start: 0.1s; }
+.initial-site-visit .home-page { --home-reveal-start: 2.05s; }
+
+.home-page .hero > *,
+.home-page .main > section:not(.hero) > .work-header,
+.home-page .work-item {
+  animation: homeContentReveal 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.initial-site-visit .home-page .main > * {
-  animation: contentItemReveal 0.55s 2.05s ease-out both;
+.home-page .hero > :nth-child(1) { animation-delay: var(--home-reveal-start); }
+.home-page .hero > :nth-child(2) { animation-delay: calc(var(--home-reveal-start) + 0.04s); }
+.home-page .hero > :nth-child(3) { animation-delay: calc(var(--home-reveal-start) + 0.08s); }
+.home-page .main > section:not(.hero) > .work-header {
+  animation-delay: calc(var(--home-reveal-start) + 0.04s);
+}
+.home-page .work-item:nth-child(1) { animation-delay: calc(var(--home-reveal-start) + 0.06s); }
+.home-page .work-item:nth-child(2) { animation-delay: calc(var(--home-reveal-start) + 0.09s); }
+.home-page .work-item:nth-child(3) { animation-delay: calc(var(--home-reveal-start) + 0.12s); }
+.home-page .work-item:nth-child(4) { animation-delay: calc(var(--home-reveal-start) + 0.15s); }
+.home-page .work-item:nth-child(5) { animation-delay: calc(var(--home-reveal-start) + 0.18s); }
+.home-page .work-item:nth-child(6) { animation-delay: calc(var(--home-reveal-start) + 0.21s); }
+.home-page .work-item:nth-child(7) { animation-delay: calc(var(--home-reveal-start) + 0.24s); }
+.home-page .work-item:nth-child(8) { animation-delay: calc(var(--home-reveal-start) + 0.27s); }
+.home-page .work-item:nth-child(9) { animation-delay: calc(var(--home-reveal-start) + 0.3s); }
+
+body:not(.home-page) .project-header {
+  animation: innerPageReveal 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.initial-site-visit .home-page .hero > * {
-  animation: contentItemReveal 0.45s ease-out both;
+body.has-scroll-reveal:not(.home-page) .project-body > * {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(8px);
 }
 
-.initial-site-visit .home-page .hero > :nth-child(1) { animation-delay: 2.05s; }
-.initial-site-visit .home-page .hero > :nth-child(2) { animation-delay: 2.13s; }
-.initial-site-visit .home-page .hero > :nth-child(3) { animation-delay: 2.21s; }
-
-.initial-site-visit .home-page .work-item { animation: contentItemReveal 0.45s ease-out both; }
-.initial-site-visit .home-page .work-item:nth-child(1) { animation-delay: 2.18s; }
-.initial-site-visit .home-page .work-item:nth-child(2) { animation-delay: 2.24s; }
-.initial-site-visit .home-page .work-item:nth-child(3) { animation-delay: 2.30s; }
-.initial-site-visit .home-page .work-item:nth-child(4) { animation-delay: 2.36s; }
-.initial-site-visit .home-page .work-item:nth-child(5) { animation-delay: 2.42s; }
-.initial-site-visit .home-page .work-item:nth-child(6) { animation-delay: 2.48s; }
-.initial-site-visit .home-page .work-item:nth-child(7) { animation-delay: 2.54s; }
-.initial-site-visit .home-page .work-item:nth-child(8) { animation-delay: 2.60s; }
-.initial-site-visit .home-page .work-item:nth-child(9) { animation-delay: 2.66s; }
+body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
+  animation: innerPageReveal 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .initial-site-visit .home-page .main,
-  .initial-site-visit .home-page .main > *,
-  .initial-site-visit .home-page .hero > *,
-  .initial-site-visit .home-page .work-item {
+  .home-page .hero > *,
+  .home-page .main > section:not(.hero) > .work-header,
+  .home-page .work-item {
     animation: none;
     opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  body:not(.home-page) .project-header {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  body.has-scroll-reveal:not(.home-page) .project-body > * {
+    animation: none;
+    opacity: 1;
+    filter: none;
     transform: none;
   }
 }
@@ -106,13 +148,13 @@ body {
 
 .rv-logo{
   width: 30%;
-  opacity: 0.25;
+  opacity: 0.20;
 }
 
 }
 
 .logo-mark {
-  font-family: 'Inter', sans-serif;
+  font-family: 'ABC Areal', sans-serif;
   font-weight: 900;
   font-size: 26px;
   letter-spacing: -0.05em;
@@ -125,7 +167,7 @@ body {
 .nav-section { display: flex; flex-direction: column; gap: 0.4rem; }
 
 .nav-label {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -135,7 +177,7 @@ body {
 }
 
 .nav-link {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 12.5px;
   color: rgba(0,0,0,0.55);
   text-decoration: none;
@@ -150,20 +192,20 @@ body {
 
 .resume-entry { margin-bottom: 0.65rem; }
 .resume-title {
-  font-family: 'Space Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 11.5px;
   color: rgba(0,0,0,0.7);
   font-weight: 500;
   line-height: 1.5;
 }
 .resume-co {
-  font-family: 'Space Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 10.5px;
   color: rgba(0,0,0,0.35);
 }
 
 .tagline {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 10px;
   color: rgba(0,0,0,0.18);
   letter-spacing: 0.05em;
@@ -206,7 +248,10 @@ body {
 }
 
 .about-name-label {
-  border-bottom: 1.75px dotted currentColor;
+  color: #007AFF;
+  font-size: 1em;
+  font-weight: 100;
+  border-bottom: 1.75px dashed currentColor;
 }
 
 .about-tooltip {
@@ -221,7 +266,7 @@ body {
   border-radius: 2px;
   background: #fff;
   color: rgba(0,0,0,0.62);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 10px;
   font-weight: 400;
   line-height: 1.2;
@@ -275,7 +320,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 14px;
   color: rgba(0,0,0,0.55);
   text-decoration: none;
@@ -288,18 +333,16 @@ body {
   background:transparent;
   cursor: pointer;
 }
-.hero-email:hover { background: rgba(0,0,0,0.04); }
+.hero-email:hover { background: #0000000a; }
 
 
 
 /* ─── Work List ──────────────────────────────────────────── */
 .work-header {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: rgba(0,0,0,0.28);
-  text-transform: uppercase;
+  font-family: 'ABC Areal Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.48);
   padding-bottom: 0.6rem;
   border-bottom: 0.5px solid rgba(0,0,0,0.07);
 }
@@ -324,15 +367,15 @@ body {
 .work-left { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
 
 .work-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'ABC Areal', sans-serif;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(0,0,0,0.72);
   transition: color 0.15s;
 }
 
 .work-client {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 12px;
   color: rgba(0,0,0,0.32);
 }
@@ -348,9 +391,9 @@ body {
 
 /* ─── Tags ───────────────────────────────────────────────── */
 .tag {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 9.5px;
-  font-weight: 500;
+  font-weight: 200;
   letter-spacing: 0.07em;
   padding: 0.18rem 0.5rem;
   border-radius: 2px;
@@ -377,7 +420,7 @@ body {
 .project-header { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .back-link {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 14px;
   color: rgba(0,0,0,0.4);
   text-decoration: none;
@@ -403,7 +446,7 @@ body {
 }
 
 .project-client {
-  font-family: 'Space Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 12px;
   color: rgba(0,0,0,0.4);
 }
@@ -417,7 +460,7 @@ body {
 .project-body { display: flex; flex-direction: column; gap: 3rem; }
 
 .project-section-label {
-  font-family: Inter, sans-serif;
+  font-family: 'ABC Areal', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: 000000;
@@ -444,7 +487,7 @@ body {
   justify-content: center;
   gap: 0.5rem;
   color: rgba(0,0,0,0.25);
-  font-family: 'Space Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.05em;
 }
@@ -497,7 +540,7 @@ body {
 
 /* ─── Collateral description ───────────────────────────────── */
 .collateral-caption {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'ABC Areal Mono', monospace;
   font-size: 10.5px;
   color: rgba(0,0,0,0.35);
   margin-top: 0.5rem;
