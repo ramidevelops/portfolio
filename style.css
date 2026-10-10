@@ -316,6 +316,12 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   font-weight: 100;
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .hero-email {
   display: inline-flex;
   align-items: center;
@@ -334,6 +340,13 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   cursor: pointer;
 }
 .hero-email:hover { background: #0000000a; }
+
+.hero-actions .feed-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.hero-actions .feed-link .arrow { color: #000; }
 
 
 
@@ -407,6 +420,8 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 .tag-frontend { color: #854F0B; border-color: #EF9F27; background: #FAEEDA; }
 .tag-campaign { color: #993C1D; border-color: #F0997B; background: #FAECE7; }
 .tag-web      { color: #0F6E56; border-color: #5DCAA5; background: #E1F5EE; }
+.tag-ai       { color: #993556; border-color: #ED93B1; background: #FBEAF0; }
+.tag-systems  { color: #444441; border-color: #B4B2A9; background: #F1EFE8; }
 
 .arrow {
    width: 14px;
