@@ -148,7 +148,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .rv-logo{
   width: 30%;
-  opacity: 0.20;
+  opacity: 0.90;
 }
 
 }
@@ -329,7 +329,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   gap: 0.4rem;
   font-family: 'ABC Areal Mono', monospace;
   font-size: 14px;
-  color: rgba(0,0,0,0.55);
+  color: #0000008c;
   text-decoration: none;
   border: 0.5px solid rgba(0,0,0,0.16);
   padding: 0.4rem 1rem;
@@ -343,13 +343,10 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 .hero-email:hover { background: #0000000a; }
 
 .hero-actions .feed-link {
-  color: #000;
+  color: #0000008c;
+;
   text-decoration: none;
 }
-
-.hero-actions .feed-link .arrow { color: #000; }
-
-
 
 /* ─── Work List ──────────────────────────────────────────── */
 .work-header {
