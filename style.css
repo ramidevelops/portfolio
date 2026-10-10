@@ -147,11 +147,10 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 
 .rv-logo{
-  width: 30%;
+  width: clamp(180px, 35%, 360px);
   opacity: 0.90;
 }
 
-}
 
 .logo-mark {
   font-family: 'ABC Areal', sans-serif;
@@ -251,7 +250,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   color: #007AFF;
   font-size: 1em;
   font-weight: 100;
-  border-bottom: 1.75px dashed currentColor;
+  border-bottom: 1.75px dotted currentColor;
 }
 
 .about-tooltip {
