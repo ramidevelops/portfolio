@@ -320,6 +320,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .hero-email {
