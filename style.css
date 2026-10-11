@@ -247,6 +247,8 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 }
 
 .about-name-label {
+  position: relative;
+  display: inline-block;
   color: #007AFF;
   font-size: 1em;
   font-weight: 100;
