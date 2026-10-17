@@ -147,7 +147,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 
 .rv-logo{
-  width: clamp(180px, 35%, 360px);
+  width: clamp(180px, 30%, 360px);
   opacity: 0.90;
 }
 
@@ -252,7 +252,8 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   color: #007AFF;
   font-size: 1em;
   font-weight: 100;
-  border-bottom: 1.75px dotted currentColor;
+  text-decoration: underline dotted;
+  text-underline-offset: 6px;
 }
 
 .about-tooltip {
