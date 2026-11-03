@@ -219,6 +219,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   gap: 2.5rem;
   width: clamp(320px, 90%, 750px);
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* ─── Hero ───────────────────────────────────────────────── */
