@@ -1,6 +1,6 @@
 /* ─── Reset ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth;}
 
 /* ─── Fonts ──────────────────────────────────────────────── */
 @font-face {
@@ -25,8 +25,6 @@ html { scroll-behavior: smooth; }
 body {
 
   font-family: 'ABC Areal', sans-serif;
-  letter-spacing: -0.25px;
- /* background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 40%, #f0f9ff 70%, #e0f2fe 100%);*/
  background-color: #fafafa;
   background-attachment: fixed;
   min-height: 100vh;
@@ -155,7 +153,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 .logo-mark {
   font-family: 'ABC Areal', sans-serif;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 1.625rem;
   letter-spacing: -0.05em;
   color: #0a0a0a;
   line-height: 1;
@@ -167,7 +165,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .nav-label {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   color: rgba(0,0,0,0.3);
@@ -177,7 +175,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .nav-link {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 12.5px;
+  font-size: 0.78125rem;
   color: rgba(0,0,0,0.55);
   text-decoration: none;
   display: flex;
@@ -186,26 +184,26 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   padding: 3px 0;
   transition: color 0.15s;
 }
-.nav-link::before { content: '>'; opacity: 0.35; font-size: 10px; }
+.nav-link::before { content: '>'; opacity: 0.35; font-size: 0.625rem; }
 .nav-link:hover, .nav-link.active { color: rgba(0,0,0,0.9); }
 
 .resume-entry { margin-bottom: 0.65rem; }
 .resume-title {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 11.5px;
+  font-size: 0.71875rem;
   color: rgba(0,0,0,0.7);
   font-weight: 500;
   line-height: 1.5;
 }
 .resume-co {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 10.5px;
+  font-size: 0.65625rem;
   color: rgba(0,0,0,0.35);
 }
 
 .tagline {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 10px;
+  font-size: 0.625rem;
   color: rgba(0,0,0,0.18);
   letter-spacing: 0.05em;
   margin-top: auto;
@@ -251,7 +249,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   position: relative;
   display: inline-block;
   color: #007AFF;
-  font-size: 1em;
+  font-size: inherit;
   font-weight: 100;
   text-decoration: underline dotted;
   text-underline-offset: 6px;
@@ -270,7 +268,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   background: #fff;
   color: rgba(0,0,0,0.62);
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
@@ -313,7 +311,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 }
 
 .hero-intro {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   color: #9f9c9c;
   font-weight: 100;
@@ -331,7 +329,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   align-items: center;
   gap: 0.4rem;
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #0000008c;
   text-decoration: none;
   border: 0.5px solid rgba(0,0,0,0.16);
@@ -354,7 +352,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 /* ─── Work List ──────────────────────────────────────────── */
 .work-header {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: rgba(0,0,0,0.48);
   padding-bottom: 0.6rem;
@@ -382,7 +380,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .work-title {
   font-family: 'ABC Areal', sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: rgba(0,0,0,0.72);
   transition: color 0.15s;
@@ -390,7 +388,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .work-client {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: rgba(0,0,0,0.32);
 }
 
@@ -406,12 +404,10 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 /* ─── Tags ───────────────────────────────────────────────── */
 .tag {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 9.5px;
-  font-weight: 200;
+  font-size: 0.5rem;
   letter-spacing: 0.07em;
-  padding: 0.18rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 2px;
-  border: 0.5px solid;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -437,7 +433,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .back-link {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: rgba(0,0,0,0.4);
   text-decoration: none;
   display: inline-flex;
@@ -463,7 +459,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 .project-client {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: rgba(0,0,0,0.4);
 }
 
@@ -504,7 +500,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   gap: 0.5rem;
   color: rgba(0,0,0,0.25);
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.05em;
 }
 .img-placeholder.tall  { aspect-ratio: 16/9; }
@@ -557,7 +553,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 /* ─── Collateral description ───────────────────────────────── */
 .collateral-caption {
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 10.5px;
+  font-size: 0.65625rem;
   color: rgba(0,0,0,0.35);
   margin-top: 0.5rem;
 }
@@ -580,4 +576,5 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   .nav-section:not(:first-of-type) { display: none; }
   .main { padding: 2rem 1.5rem; margin: 0; width: 100%; }
   .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+  .tag-row {display: none;}
 }
