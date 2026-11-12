@@ -38,17 +38,17 @@
 
       <section class="hero">
       
-      <div><img class="rv-logo" src="assets/rv-logo.svg"></div>
+      <div><img class="rv-logo" src="assets/rv-logo.svg" alt="Ramon Villamediana"></div>
       <div>
         <p class="hero-intro"><span style="font-weight: 400; color: #1e1e1e;">Brand to UI. Print to Code. </span><a class="about-name" href="about.html" aria-label="Learn more about Ramon"><span class="about-name-label">Ramon<span class="about-tooltip" role="tooltip">learn more about me</span></span></a> is currently the visual lead at a Fortune 500 [$MOS] — previously at Accenture, engaged in $3B worth of deals as a visual designer.</p></div>
 
         <div class="hero-actions">
-          <button class="hero-email">
-            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
+          <button class="hero-email" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
         <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
         <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path> 
             </svg>
-            <span class="email-text">work@helloramon.com</span>
+            <span class="email-text" aria-live="polite">work@helloramon.com</span>
           </button>
 
           <a class="hero-email feed-link" href="feed.html">
@@ -194,15 +194,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const txt = btn?.querySelector('.email-text');
     
     if (btn && txt) {
-        btn.addEventListener('click', () => {
-            navigator.clipboard.writeText('work@helloramon.com').then(() => {
+        const email = 'work@helloramon.com';
+        let feedbackTimeout;
+
+        btn.addEventListener('click', async () => {
+            window.clearTimeout(feedbackTimeout);
+
+            try {
+                await navigator.clipboard.writeText(email);
                 txt.textContent = 'copied to clipboard';
-                
-                setTimeout(() => {
-                    txt.textContent = 'work@helloramon.com';
-                    btn.style.removeAttribute('style'); // Keeps CSS file in full control
-                }, 1000);
-            });
+            } catch (error) {
+                console.error('Unable to copy email address.', error);
+                txt.textContent = 'unable to copy email';
+            }
+
+            feedbackTimeout = window.setTimeout(() => {
+                txt.textContent = email;
+            }, 1000);
         });
     }
 });
