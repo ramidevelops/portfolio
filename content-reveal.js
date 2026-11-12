@@ -1,3 +1,20 @@
+const images = document.querySelectorAll('img');
+
+images.forEach((image) => {
+  if (image.closest('.site-loader')) return;
+
+  image.classList.add('image-reveal');
+
+  const revealImage = () => image.classList.add('is-loaded');
+
+  if (image.complete) {
+    requestAnimationFrame(revealImage);
+  } else {
+    image.addEventListener('load', revealImage, { once: true });
+    image.addEventListener('error', revealImage, { once: true });
+  }
+});
+
 const revealItems = document.querySelectorAll('body:not(.home-page) .project-body > *');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

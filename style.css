@@ -73,25 +73,34 @@ body {
 
 .home-page .hero > *,
 .home-page .main > section:not(.hero) > .work-header,
-.home-page .work-item {
-  animation: homeContentReveal 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+.home-page .work-list .work-item {
+  animation: homeContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .home-page .hero > :nth-child(1) { animation-delay: var(--home-reveal-start); }
-.home-page .hero > :nth-child(2) { animation-delay: calc(var(--home-reveal-start) + 0.04s); }
-.home-page .hero > :nth-child(3) { animation-delay: calc(var(--home-reveal-start) + 0.08s); }
+.home-page .hero > :nth-child(2) { animation-delay: calc(var(--home-reveal-start) + 0.12s); }
+.home-page .hero > :nth-child(3) { animation-delay: calc(var(--home-reveal-start) + 0.24s); }
 .home-page .main > section:not(.hero) > .work-header {
-  animation-delay: calc(var(--home-reveal-start) + 0.04s);
+  animation-delay: calc(var(--home-reveal-start) + 0.36s);
 }
-.home-page .work-item:nth-child(1) { animation-delay: calc(var(--home-reveal-start) + 0.06s); }
-.home-page .work-item:nth-child(2) { animation-delay: calc(var(--home-reveal-start) + 0.09s); }
-.home-page .work-item:nth-child(3) { animation-delay: calc(var(--home-reveal-start) + 0.12s); }
-.home-page .work-item:nth-child(4) { animation-delay: calc(var(--home-reveal-start) + 0.15s); }
-.home-page .work-item:nth-child(5) { animation-delay: calc(var(--home-reveal-start) + 0.18s); }
-.home-page .work-item:nth-child(6) { animation-delay: calc(var(--home-reveal-start) + 0.21s); }
-.home-page .work-item:nth-child(7) { animation-delay: calc(var(--home-reveal-start) + 0.24s); }
-.home-page .work-item:nth-child(8) { animation-delay: calc(var(--home-reveal-start) + 0.27s); }
-.home-page .work-item:nth-child(9) { animation-delay: calc(var(--home-reveal-start) + 0.3s); }
+.home-page .main > section:not(.hero) > .work-list:nth-child(2) .work-item:nth-child(1) {
+  animation-delay: calc(var(--home-reveal-start) + 0.48s);
+}
+.home-page .main > section:not(.hero) > .work-list:nth-child(2) .work-item:nth-child(2) {
+  animation-delay: calc(var(--home-reveal-start) + 0.60s);
+}
+.home-page .main > section:not(.hero) > .work-list:nth-child(2) .work-item:nth-child(3) {
+  animation-delay: calc(var(--home-reveal-start) + 0.72s);
+}
+.home-page .main > section:not(.hero) > .work-list:nth-child(2) .work-item:nth-child(4) {
+  animation-delay: calc(var(--home-reveal-start) + 0.84s);
+}
+.home-page .main > section:not(.hero) > .work-list:nth-child(3) .work-item:nth-child(1) {
+  animation-delay: calc(var(--home-reveal-start) + 0.96s);
+}
+.home-page .main > section:not(.hero) > .work-list:nth-child(3) .work-item:nth-child(2) {
+  animation-delay: calc(var(--home-reveal-start) + 1.08s);
+}
 
 body:not(.home-page) .project-header {
   animation: innerPageReveal 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
@@ -113,7 +122,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
   .home-page .hero > *,
   .home-page .main > section:not(.hero) > .work-header,
-  .home-page .work-item {
+  .home-page .work-list .work-item {
     animation: none;
     opacity: 1;
     transform: none;
@@ -577,6 +586,30 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
       border: 0.5px solid rgba(0,0,0,0.08);
       display: block;
     }
+
+.image-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.home-page .image-reveal {
+  transition-duration: 650ms;
+}
+
+.image-reveal.is-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-reveal,
+  .home-page .image-reveal {
+    transition: none;
+    transform: none;
+  }
+}
+
     .project-video {
       width: 100%;
       display: block;
