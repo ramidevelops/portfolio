@@ -155,7 +155,6 @@ html.page-entering .layout {
   padding: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
   width: clamp(320px, 90%, 750px);
   margin: 0 auto;
   justify-content: start;
@@ -166,6 +165,7 @@ html.page-entering .layout {
   padding-top: 0;
   padding-bottom: 2rem;
   gap: 3rem;
+  justify-content: center;
 }
 
 /* ─── Hero ───────────────────────────────────────────────── */
@@ -284,6 +284,7 @@ html.page-entering .layout {
   border-radius: 2px;
   margin-top: 0.5rem;
   width: fit-content;
+  height: 30px;
   transition: background-color 160ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
   background:transparent;
   cursor: pointer;
