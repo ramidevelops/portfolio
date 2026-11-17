@@ -155,9 +155,18 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   grid-template-columns:1fr;
 }
 
+/* Flag string sits at the very top of the content column */
+.home-page flag-header {
+  animation: homeContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--home-reveal-start);
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page flag-header { animation: none; }
+}
+
 
 .rv-logo{
-  width: clamp(180px, 30%, 360px);
+  width: clamp(160px, 20%, 360px);
   opacity: 0.90;
 }
 
@@ -223,13 +232,20 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 
 /* ─── Main ───────────────────────────────────────────────── */
 .main {
-  padding: 3rem;;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 4rem;
   width: clamp(320px, 90%, 750px);
   margin: 0 auto;
-  justify-content: center;
+  justify-content: start;
+}
+
+/* Tighter home layout so everything stays in one view under the flags */
+.layout-home .main {
+  padding-top: 0;
+  padding-bottom: 2rem;
+  gap: 3rem;
 }
 
 /* ─── Hero ───────────────────────────────────────────────── */
@@ -315,10 +331,10 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
 }
 
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: rgba(0,0,0,0.5);
-  max-width: 600px;
+  max-width: 640px;
 }
 
 .hero-intro {
@@ -340,7 +356,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   align-items: center;
   gap: 0.4rem;
   font-family: 'ABC Areal Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #0000008c;
   text-decoration: none;
   border: 0.5px solid rgba(0,0,0,0.16);
@@ -369,7 +385,7 @@ body.has-scroll-reveal:not(.home-page) .project-body > *.is-visible {
   font-family: 'ABC Areal Mono', monospace;
   font-size: 0.9rem;
   font-weight: 400;
-  color: rgba(0,0,0,0.48);
+  color: #6262627a;
   padding-bottom: 0.6rem;
   border-bottom: 0.5px solid rgba(0,0,0,0.07);
 }
