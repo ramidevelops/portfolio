@@ -154,6 +154,7 @@ html.page-entering .layout {
 .main {
   padding: 4rem;
   display: flex;
+  gap:2rem;
   flex-direction: column;
   width: clamp(320px, 90%, 750px);
   margin: 0 auto;
@@ -468,7 +469,7 @@ html.page-entering .layout {
   background: rgba(0,0,0,0.15);
 }
 
-.project-body { display: flex; flex-direction: column; gap: 3rem; }
+.project-body { display: flex; flex-direction: column; gap: 2rem; }
 
 .project-section-label {
   font-family: 'ABC Areal', sans-serif;
