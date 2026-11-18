@@ -576,4 +576,5 @@ html.page-entering .layout {
   .main { padding: 2rem 1.5rem; margin: 0; width: 100%; }
   .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
   .tag-row {display: none;}
+  .project-meta {display: none;}
 }
